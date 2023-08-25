@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb-On-Off</title>
+    <style>
+        body{
+            background-color: black;
+            text-decoration: none;
+            
+        }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button{
+            margin-top: 20px;
+            padding: 20px;
+            letter-spacing: 1px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    
+    </style>
+</head>
+<body>
+    <img id="bulb" src="off.jpg" alt="">
+    <button id="btn">Turn On</button>
+
+    <script>
+        let btn = document.getElementById('btn')
+        let bulb = document.getElementById('bulb')
+
+        btn.addEventListener('click', togglebtn)
+        function togglebtn(e){
+            if(btn.textContent.includes('On')){
+                bulb.src="on.jpg"
+                btn.textContent="Turn Off"
+                btn.style.transition='5s ease'
+            }else{
+                bulb.src="off.jpg"
+                btn.textContent="Turn On"
+            }
+            btn.style.background='skyblue';
+            
+        }
+       
+    </script>
+</body>
+</html>
